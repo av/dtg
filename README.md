@@ -12,13 +12,13 @@ DTG - DaTa Generator, allows you to develop your data generation scripts faster
 
 ## Installation
 
-```
+```bash
 npm install dtg
 ```
 
 ## Usage
 
-```
+```javascript
 const gen = require('dtg').generate;
 const template = {
     {
