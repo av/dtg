@@ -1,6 +1,10 @@
 {
   "name": "dtg",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamfrontender/dtg.git"
+  },
   "description": "Data Generator",
   "main": "index.js",
   "scripts": {
@@ -11,9 +15,9 @@
     "mock",
     "generator"
   ],
-  "author": "iamfrontender",
+  "author": "iamfrontender <iamfrontender@gmail.com (http://iamfrontender.io)>",
   "license": "MIT",
-  "dependencies": {
-    "requirist": "^0.2.0"
+  "engines": {
+    "node": ">=4.0.0"
   }
 }
