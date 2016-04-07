@@ -1,8 +1,18 @@
 'use strict';
 
-module.exports = {
-  generate: generate
+const $ = {
+  // API
+  generate: generate,
+
+  // Generators
+  'int': require('./generators/int'),
+  'enum': require('./generators/enum'),
+  'float': require('./generators/float'),
+  'pattern': require('./generators/pattern'),
+  'timestamp': require('./generators/timestamp')
 };
+
+module.exports = $;
 
 /**
  * Takes a template object and returns object filled with generated values.
@@ -35,17 +45,6 @@ function generate(template) {
   
   return output;
 }
-
-/**
- * Stores generators
- */
-const $ = {
-  'enum': require('./generators/enum'),
-  'float': require('./generators/float'),
-  'int': require('./generators/int'),
-  'pattern': require('./generators/pattern'),
-  'timestamp': require('./generators/timestamp')
-};
 
 
 /**
