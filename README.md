@@ -9,6 +9,7 @@ DTG - DaTa Generator, allows you to develop your data generation scripts faster
 + dtg - tool for data generation
 + template - javascript object containing fields with generation operators
 + generation operator - string strating with '$'
++ plugin - code, existing in a sibling folder of dtg installation, which exports `install` function
 
 ## Installation
 
@@ -56,4 +57,25 @@ while (actions.length < 100) {
 
 ```
 
+## Plugins
 
+DTG loads plugins automatically. The only place to locate them is a sibling folder of a dtg installation itself.
+E.g.
+```
+/node_modules
+  /dtg
+  /dtg-plugin
+```
+Plugin must have either export a function or `install` field with function value in its exports. The function will retrieve the main DTG object when called and therefore do whatever needed.
+E.g.
+```
+module.exports = {
+    install: function(dtg) {
+        dtg['curl'] = require('./curl-generator')
+    }
+}
+
+module.exports = function(dtg) {
+    dtg['search-results'] = require('google-connector');
+}
+```
